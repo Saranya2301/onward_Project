@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f5f5f7;
+    color: #333;
+    height: 200vh; 
+}
+
+
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    transition: background-color 0.5s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007aff;
+    transition: color 0.5s ease;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: rgba(0, 122, 255, 0.1);
+    color: #007aff;
+}
+
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    padding: 10px 0;
+}
+
+.dropdown li {
+    padding: 8px 20px;
+}
+
+.dropdown a {
+    color: #333;
+}
+
+.nav-links li:hover .dropdown {
+    display: flex;
+}
+
+
+.cta {
+    background-color: #007aff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta:hover {
+    background-color: #005bb5;
+    transform: scale(1.1);
+}
+
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: #007aff;
+    cursor: pointer;
+}
+
+
+
+.home-hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(202, 255, 193); 
+    height: 100vh; 
+    width: 100%; 
+}
+
+
+.home-hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; 
+    width: 100%; 
+    padding: 0 20px;
+}
+
+
+.home-hero-box {
+    background-color: rgba(239, 231, 120, 0.8); 
+    padding: 20px;
+    border-radius: 15px; 
+    box-shadow: 0 10px 15px rgba(159, 146, 78, 0.1); 
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+}
+
+
+.home-hero-image {
+    width: 50%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px;
+}
+
+
+.home-hero-head {
+    font-size: 3rem;
+    color: #333;
+    line-height: 1.4;
+    max-width: 50%; 
+    text-align: left;
+}
+
+
+.home-hero-head-col {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.home-hero-levelup {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+}
+
+
+.home-hero-free {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2de35e;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: left;
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    .nav-links a {
+        width: 100%;
+    }
+
+    
+    .dropdown {
+        display: none;
+        flex-direction: column;
+        position: static;
+        margin-top: 10px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav-links li.active .dropdown {
+        display: flex;
+    }
+
+    .dropdown li {
+        margin: 0;
+        padding: 10px 20px;
+    }
+
+    .dropdown a {
+        width: 100%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .home-hero-content {
+        flex-direction: column; 
+        text-align: center;
+    }
+
+    .home-hero-image {
+        width: 100%;
+        max-width: 500px; 
+    }
+
+    .home-hero-head {
+        font-size: 2rem;
+    }
+
+    .home-hero-free {
+        font-size: 2rem;
+    }
+}
